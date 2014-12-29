@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>jQuery UI</title>
+<link rel="stylesheet"
+      href="./css/jquery-ui/jquery-ui.css"
+      type="text/css"/>
+<link rel="stylesheet"
+      href="./css/extra-styles.css"
+      type="text/css"/>
+<script src="./scripts/jquery.js"
+        type="text/javascript"></script>
+<script src="./scripts/jquery-ui.js"
+        type="text/javascript"></script>
+<script src="./scripts/jquery-ui-basics.js"
+        type="text/javascript"></script>
+</head>
+<body>
+<div align="center">
+<table border="5">
+  <tr><th class="title">jQuery UI</th></tr>
+</table>
+<p/>
+<fieldset>
+<legend>Skinnable (Themeable) Buttons</legend>
+<div id="button-div">
+  <input type="submit" class="style-test"
+         value="&lt;input type='submit'...&gt;"/>
+  <input type="button" class="style-test"
+         value="&lt;input type='button'...&gt;"/>
+  <button class="style-test">
+    The &lt;button&gt; element
+  </button>
+  <a href="#" class="style-test">Hypertext link</a>
+</div>
+<hr/>
+<input type="button" id="button-styler-button"
+       value="Style the Buttons"/>
+</fieldset>
+<div id="button-dialog" title="A jQuery UI Dialog" 
+     style="display:none">
+ <p><i>Hey!</i> You clicked a button!</p>
+</div>
+<p/>
+<fieldset>
+<legend>Tabbed Panels with Static Content</legend>
+<div id="static-tabbed-panel-div">
+  <ul>
+    <li><a href="#panel1">Panel 1</a></li>
+    <li><a href="#panel2">Panel 2</a></li>
+    <li><a href="#panel3">Panel 3</a></li>
+  </ul>
+  <div id="panel1">
+    <p>Content for first panel.</p>
+    <p>Foo, bar, baz.</p><p>Yadda, yadda, yadda.</p>
+  </div>
+  <div id="panel2">
+    <p>Content for second panel.</p>
+    <p>Foo, bar, baz.</p><p>Yadda, yadda, yadda.</p>
+  </div>
+  <div id="panel3">
+    <p>Content for third panel.</p>
+    <p>Foo, bar, baz.</p><p>Yadda, yadda, yadda.</p>
+  </div>
+</div>
+</fieldset>
+<br/>
+<fieldset>
+<legend>Tabbed Panels with Ajax Content</legend>
+<div id="ajax-tabbed-panel-div">
+<ul>
+  <li><a href="time-panel.jsp">Show Time</a></li>
+  <li><a href="list-panel.jsp?range=5">
+      Show Small Numbers</a></li>
+  <li><a href="list-panel.jsp?range=500">
+      Show Big Numbers</a></li>
+</ul>
+</div>
+</fieldset>
+<br/>
+<fieldset>
+<legend>Accordion Panels</legend>
+<div id="accordion-panel-div">
+
+<h2><a href="#">Panel 1</a></h2>
+<div>
+  <p>Content for first panel.</p>
+  <p>Foo, bar, baz.</p><p>Yadda, yadda, yadda.</p>
+</div>
+
+<h2><a href="#">Panel 2</a></h2>
+<div>
+  <p>Content for second panel.</p>
+  <p>Foo, bar, baz.</p><p>Yadda, yadda, yadda.</p>
+</div>
+
+<h2><a href="#">Panel 3</a></h2>
+<div>
+  <p>Content for third panel.</p>
+  <p>Foo, bar, baz.</p><p>Yadda, yadda, yadda.</p>
+</div>
+
+</div>
+
+</fieldset>
+<br/>
+<fieldset>
+<legend>Date Picker</legend>
+<table>
+  <tr><td align="right">
+      From: <input type="text"/></td></tr>
+  <tr><td align="right">
+      Departure Date: 
+      <input type="text" id="start-date"/></td></tr>
+  <tr><td align="right">
+      To: <input type="text"/></td></tr>
+  <tr><td align="right">
+      Return Date: 
+      <input type="text" id="end-date"/></td></tr>
+  <tr><td align="center">
+      <input type="button" value="Show Flights"/>
+      <input type="button" value="Show Hotels"/>
+      </td></tr>
+</table>
+</fieldset>
+<br/>
+
+<fieldset>
+<legend>Slider</legend>
+<table>
+  <tr><td align="right">Type:</td>
+      <td align="left">
+        <input type="radio" value="Java"/>Java
+        <input type="radio" value="JavaScript"/>JavaScript
+      </td></tr>
+  <tr><td align="right">Cream?: </td>
+      <td align="left">
+        <input type="checkbox" value="cream"/>
+      </td></tr>
+  <tr><td align="right">Sugar?:</td>
+      <td align="left">
+        <input type="checkbox" value="sugar"/>
+      </td></tr>
+  <tr><td align="right">Temperature:</td>
+      <td align="left" width="300">
+        <div id="slider-div" style="margin-left: 10px"></div>
+        <div id="temp-display" align="center">32</div>
+      </td></tr>
+  <tr><td align="center" colspan="2">
+        <input type="button" value="Order Coffee"/>
+      </td></tr>
+</table>
+</fieldset>
+<br/>
+<fieldset>
+<legend>Progress Bar</legend>
+<div id="progressbar-div"></div>
+<input type="button" value="Click 10 Times"
+       id="progressbar-button"/>
+</fieldset>
+<br/>
+</div>
+
+
+
+<br/><br/><br/><br/><br/><br/>
+<font size="-3">All code from the
+<a href="http://courses.coreservlets.com/Course-Materials/">
+coreservlets.com J2EE tutorials (servlets, JSP, Struts, JSF 1.x, JSF 2.0, Ajax [with jQuery, Prototype,
+Scriptaculous, Dojo, Ext-JS, and Google Closure], GWT 2.0, Spring, Hibernate, JPA,
+SOAP-based and RESTful Web Services, &amp; Java 6 programming)</a>. There are also live instructor-led
+<a href="http://courses.coreservlets.com/">training courses on
+the same J2EE topics (servlets, JSP, Struts, JSF 1.x, JSF 2.0, Ajax [with jQuery, Prototype,
+Scriptaculous, Dojo, Ext-JS, and Google Closure], GWT 2.0, Spring, Hibernate, JPA,
+SOAP-based and RESTful Web Services, &amp; Java 6 programming)</a>.
+</font> 
+</body></html>
