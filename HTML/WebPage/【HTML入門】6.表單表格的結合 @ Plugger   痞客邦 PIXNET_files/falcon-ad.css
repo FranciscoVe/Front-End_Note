@@ -1,0 +1,41 @@
+#falcon-ad-right-fixed-block {
+    display: inline-block;
+    position: fixed;
+    right: -210px;
+    bottom: 100px;
+    height: 175px;
+    width: 180px;
+    padding: 15px 15px 0;
+    margin-right: 5px;
+    z-index: 9999999;
+    text-align: center;
+    border: 1px #ccc solid;
+    background-color: white;
+}
+
+#falcon-ad-right-fixed-block .title {
+    color: #000;
+}
+
+#falcon-ad-right-fixed-block .cancel-btn:before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: -5px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 0 6px 6px;
+    border-color: transparent transparent transparent #204ab8;
+}
+
+#falcon-ad-right-fixed-block .cancel-btn {
+    position: absolute;
+    top: 5px;
+    left: -33px;
+    padding: 5px 10px;
+    background: #204ab8;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}

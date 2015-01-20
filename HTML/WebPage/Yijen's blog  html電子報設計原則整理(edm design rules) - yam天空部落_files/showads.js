@@ -1,0 +1,14 @@
+(function(w){if(w['BA_CORE_1']){return;}
+w['BA_CORE_1']=true;var BA_CORE=function(b,f){this.sBID=b;this.sFID=f;},tmp=(BA_CORE.prototype={oD:document,sAD:'BA_AD'+('1'!='1'?'_1':''),rAFID:/bloggeradspvid=(\d+)/i,rFID:/ba_fid=(\d+)/i,sTL:(top!=self)?document.referrer:location.href,sLH:location.host,sADD:'js1.bloggerads.net',sSC:'http:/',sPVP:'getads_pv.aspx',sTP:'',iMB:'0',eXT:function(t){t.dEC(this,function(a){t[a]=this==window?null:this;});},aPN:function(o,c){o.appendChild(c);},dEC:function(o,f){if(!o){return;}
+if(!o.length||o.length==0){for(var _i in o){if(f.call(o[_i],_i)===false){break;}}}
+else{for(var _i=0;_i<o.length;_i++){if(f.call(o[_i],_i)===false){break;}}}
+return o;},gDR:function(){return/complete/i.test(document.readyState);},iPV:function(){return this.gPVID()!=='';},iSD:function(){with(this){return sLH.split('.').reverse()[1]==sADD.split('.').reverse()[1]&&sLH.search('signup')==0;}},gPVID:function(){with(this){if(iSD()){var m=location.href.match(/\?id=(\d+)/i);if(m&&m[1])
+return m[1];}
+if(rAFID.test(sTL)&&rFID.test(sTL)&&sTL.match(rFID)[1]==sFID){return sTL.match(rAFID)[1];}
+return'';}},iB:function(){var t=this;if(t.iSD()&&location.href.match(/\?id=(\d+)/i))
+return t.sFID;return/buffer\=1/i.test(t.sTL)?t.sFID:0;},sATT:function(o,a,v){if(v){o[a]=v;return o;}
+this.dEC(a,function(k){o[k]=this;});return o;},gBT:function(t,o){return(o||this.oD).getElementsByTagName(t);},gBI:function(i,o){return(o||this.oD).getElementById(i);},gCE:function(t,a,i,iT){with(this){var _d=oD.createElement(t);sATT(_d,a);if(iT){aPN(_d,oD.createTextNode(i));}else if(i){_d.innerHTML=i;}
+return _d;}},lJS:function(s,a){var _tn='script',_t='text/java'+_tn;with(this){aPN(gBT('head')[0],gCE(_tn,{type:_t,src:s,defer:'defer'}));}},tB:function(t,a,i){return'<'+t+' '+(a||'')+'>'+(i||'')+'</'+t+'>';},gAD:function(){return this.gBI(this.sAD);},pAD:function(h){with(this){if(typeof(h)==='string'){var t=gCE('div',null,h);h=t.childNodes;}
+var ad=gBI(this.sAD);while(h&&h.length&&h.length>0){aPN(ad,h[0]);}}},sL:location.href,sMD:'piccdn.bloggerads.net',sCSS:'apps/CSS/ba.css',sADP:'getads.aspx',sF:'apps/ba.js',sFV:'v=1106001',sCD:'1',lCSS:function(h){var _t='text/css',_r='stylesheet',_tn='link';with(this){gBT('head')[0].appendChild(gCE(_tn,{rel:_r,type:_t,href:h}));}},eURI:function(d){return encodeURIComponent(d);},sI:function(cn){w[cn]=this;with(this){lCSS([sSC,sMD,sCSS].join('/')+'?'+sFV);lJS([sSC,sMD,sF].join('/')+'?'+sFV);if(!iPV()){lJS([sSC,sADD,sADP].join('/')+'?'+['blogid='+sBID,'fid='+sFID,'c='+cn,'d='+sCD,'r='+eURI(eURI(sL))].join('&'));return;}
+lJS([sSC,sADD,sPVP].join('/')+'?'+['b='+sBID,'id='+gPVID(),'c='+cn,'bf='+iB()].join('&'));}}});try{var c=new BA_CORE('20130809000014','1');c.oD.write(c.tB('ins','id="'+c.sAD+'" onclick="return false;" align="left"'));if('1'=='1'){c.gCE('img',{src:[c.sSC,'log.bloggerads.net','userrequest','-2118715971.IfTETLaf','1','20130809000014'].join('/')});}c.sI('b866839587');}
+catch(e){}})(window);

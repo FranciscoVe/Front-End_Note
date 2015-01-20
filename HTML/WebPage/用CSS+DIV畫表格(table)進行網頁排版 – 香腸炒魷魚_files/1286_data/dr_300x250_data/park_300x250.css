@@ -1,0 +1,159 @@
+@charset "utf-8";
+
+#ysm_hotword_300250 {
+    width:298px;
+    height:248px;
+    border:1px solid #E2E2E2;
+}
+
+#ysm_hotword_300250 a {
+    color: #3b8dbd;
+    outline: 0 none;
+    text-decoration: none;
+}
+#ysm_hotword_300250 a:hover {
+    color: #444;
+}
+#ysm_hotword_300250 img {
+    height: auto;
+    max-width: 100%;
+}
+#ysm_hotword_300250 a, a:before, a:after {
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+}
+#ysm_hotword_300250 a img {
+    transition: opacity 0.2s ease 0s;
+}
+
+#ysm_hotword_300250 {
+	font: 13px/1.231 arial;
+	color: #333333;
+	font-weight: normal;
+	font-style: normal;
+}
+#ysm_hotword_300250 .hd .title {
+	float: left;
+	line-height: 30px;
+	margin-left: 10px;
+	margin-top:15px;
+	font-size: 25px;
+	font-weight: bold;
+	font-family: '微軟正黑體', sans-serif;
+}
+#ysm_hotword_300250 .hd a {
+	padding: 15px 30px 15px 0;
+	text-decoration: none;
+	font: bold 16px/22px'Helvetica Neue', Helvetica, Arial, STHeiti, 'Microsoft JhengHei', 微軟正黑體, sans-serif;
+}
+#ysm_hotword_300250 h2 {
+	float: left;
+	width: 100px;
+	font-size: 15px;
+	margin: 0;
+	margin-left: 4px;
+	font-weight: bold;
+	text-decoration: none;
+	text-align: left;
+
+}
+#ysm_hotword_300250 h2 a {
+	text-decoration: none;
+	font: bold 16px/22px 'Helvetica Neue', Helvetica, Arial, STHeiti, 'Microsoft JhengHei', 微軟正黑體, sans-serif;
+}
+#ysm_hotword_300250 ul {
+	padding: 0;
+}
+#ysm_hotword_300250 li {
+	padding: 5px 2px 2px 2px;
+	/*display: inline-block;*/
+	width: auto;
+	line-height: 1;
+	/*	background: url(https://s.yimg.com/f/i/tw/hp/spirit/dotted_v1.gif) 0 0 repeat-y;*/
+	border-top: none;
+}
+#ysm_hotword_300250 li a {
+	padding-right: 3px;
+	padding-left: 5px;
+	color: #07a;
+	text-decoration: none;
+	line-height: 1.4;
+	font-family: 'Raleway', sans-serif;
+	font-size: 15px;
+	/*font-weight: 400;*/
+	letter-spacing: 0.1em;
+	color: #0000FF;
+	/*background-color: #00c795;*/
+	padding: 2px;
+	text-transform: uppercase;
+	cursor: pointer;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-o-border-radius: 4px;
+	border-radius: 4px;
+	display: -moz-inline-stack;
+	display: inline-block;
+	vertical-align: middle;
+	zoom: 1;
+}
+
+#ysm_hotword_300250 .hd {
+	border-bottom: 0;
+	/*border-top: 1px solid #07a;
+	background-color: #fbfbf9;*/
+	position: relative;
+}
+#ysm_hotword_300250 .hd {
+	/*background: #f4f7f9;*/
+	background:#ffffff;
+	zoom: 1;
+	color: #333;
+	font-size: 12px;
+}
+#ysm_hotword_300250 .bd {
+  padding:8px 0px 10px 10px;
+	/*background-color: rgba(46, 46, 44, .07);*/
+	/*padding: 3px 10px 12px 10px;
+	box-shadow: 0 5px 15px -6px silver; 
+	border: 1px solid #e1e1e1;*/
+}
+#ysm_hotword_300250 .ysmBlock {
+	width: 100%;
+	float: left;
+	display: block;
+	margin: 5px 0 0 5px;
+}
+#ysm_hotword_300250 .ysmBlock img {
+  margin-top:10px;
+	float: left;
+	width: 75px;
+}
+#ysm_hotword_300250 .ysmImg {
+	float: left;
+	width: 75px;
+}
+#ysm_hotword_300250 .ysmLink {
+	line-height: 18px;
+	margin-top: 3px;
+	border-top: none;
+	line-height: 4px;
+	overflow: hidden;
+	text-align: left;
+	float: left;
+}
+#ysm_hotword_300250 .ysmLink ul {
+	margin: 10px 0 0 5px;
+}
+.clearfix {
+	*zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+	display: table;
+	line-height: 0;
+	content: "";
+}
+.clearfix:after {
+	clear: both;
+}

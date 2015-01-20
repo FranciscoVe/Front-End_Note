@@ -1,0 +1,16 @@
+ins[id^="ba_px_ad_"]{width:610px;height:295px;display:block;}
+ins[id^="ba_px_ad_"] *{border:0;color:#333;text-align:left;}
+ins[id^="ba_px_ad_"] ins{cursor:pointer;text-decoration:none;background-color:transparent;}
+ins[id^="ba_px_ad_"] ins[id^="t_ba_px_ad_"] ins:hover{background:#eee;}
+ins[id^="ba_px_ad_"] ins[id^="t_ba_px_ad_"]{width:608px;height:202px;display:block;border:1px dotted#ccc;border-bottom:none;background:#FFF;}
+ins[id^="ba_px_ad_"] .a{float:left;border:1px dotted#ccc;border-left:none;border-top:none;height:188px;}
+ins[id^="a_ba_px_ad_"]{display:block;width:610px;height:30px;background:transparent url('http://piccdn.bloggerads.net/apps/Images/px_.jpg')no-repeat scroll top center;cursor:pointer;}
+ins[id^="ba_px_ad_"] ins[id^="l_ba_px_ad_"] .a{width:141px;padding:16px 5px 0;background:#fff;}
+ins[id^="ba_px_ad_"] ins[id^="l_ba_px_ad_"] img{margin:0 10px 5px;width:120px;height:120px;}
+ins[id^="ba_px_ad_"] ins[id^="l_ba_px_ad_"] .t{line-height:18px;font-size:12px;display:block;padding:0 3px;}
+ins[id^="ba_px_ad_"] ins[id^="l_ba_px_ad_"] .b{line-height:18px;font-size:15px;display:block;color:#DB3333;padding:5px 3px 0;}
+ins[id^="ba_px_ad_"] ins[id^="r_ba_px_ad_"] .a{width:147px;padding:16px 2px 0 3px;border:none;border-bottom:1px dotted#ccc;background:#fff;}
+ins[id^="ba_px_ad_"] ins[id^="r_ba_px_ad_"] ins.t{margin:8px auto 0;display:block;line-height:16px;font-size:12px;padding:0 6px 0 5px;}
+ins[id^="ba_px_ad_"] ins[id^="r_ba_px_ad_"] ins.b{display:block;line-height:18px;font-size:13px;}
+ins[id^="ba_px_ad_"] ins[id^="b_ba_px_ad_"]{margin-top:4px;display:inline-block;}
+ins[id^="ba_px_ad_"] ins[id^="b_ba_px_ad_"]img{width:610px;}

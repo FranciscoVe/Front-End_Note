@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>share</title>
+<style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}body{line-height:1}ol,ul{list-style:none}table{border-collapse:collapse;border-spacing:0}caption,th,td{text-align:left;font-weight:normal;vertical-align:middle}q,blockquote{quotes:none}q:before,q:after,blockquote:before,blockquote:after{content:"";content:none}a img{border:none}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+body{background:transparent;}
+body #y_a_m_shareBar{background: url(http://pics.yamedia.tw/newblogtopbar/i/shareBar/shareBar.png) no-repeat left top; 
+  margin:0; 
+  padding: 0; 
+  height: 20px;
+  width: auto; 
+  clear: both; 
+  }
+body #y_a_m_shareBar *{background: transparent; margin: 0; padding: 0; border:none;}
+  body #y_a_m_shareBar li{float: left; display: inline; width: 100px;}
+    #y_a_m_shareBar a{display:block; height: 20px; overflow: hidden; text-decoration: none;}
+    #y_a_m_shareBar a .innerContent{display:block; text-indent: -9000px;}
+    #y_a_m_shareBar .y_a_m_subBox{width:23px;}
+    #y_a_m_shareBar .y_a_m_subBox a{background: url(http://pics.yamedia.tw/newblogtopbar/i/shareBar/shareBar.png) no-repeat;}
+    #y_a_m_shareBar .y_a_m_push{width: 93px;}
+    #y_a_m_shareBar .y_a_m_push a{background-position:left top; width: 93px;}
+    #y_a_m_shareBar .y_a_m_tw a{background-position: -92px top; width: 23px; margin: 0 0 0 -1px;}
+    #y_a_m_shareBar .y_a_m_pk a{background-position: -120px top; width: 23px; margin: 0 0 0 5px;}
+    #y_a_m_shareBar .y_a_m_subBox a:hover{background-position-y:-22px;}
+    #y_a_m_shareBar .y_a_m_gp{margin:0 10px 0 5px; width:30px;}
+</style>
+<script src="Yijen%27s%20blog%20%20html%E9%9B%BB%E5%AD%90%E5%A0%B1%E8%A8%AD%E8%A8%88%E5%8E%9F%E5%89%87%E6%95%B4%E7%90%86%28edm%20design%20rules%29%20-%20yam%E5%A4%A9%E7%A9%BA%E9%83%A8%E8%90%BD_files/ga.js" async="" type="text/javascript"></script><script src="bookmarker4s_data/jquery.js"></script>
+<script>
+try {
+  var _gaq = _gaq || [];
+  _gaq.push(
+          ['blog_all._setAccount', 'UA-106371-21'],
+          ['blog_all._setDomainName', '.yam.com'],
+          ['blog_all._trackPageview']
+  );
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+} catch(err){}
+
+function share(type,url){
+  _gaq.push(['blog_all._trackEvent',"share-"+type,'click',url]);
+}
+function getValue(params) { 
+  var queryString = window.location.search.substring(1); 
+  var p = queryString.split("&");
+  for (var i=0,k=p.length;i<k;i++) { 
+    var pair = p[i].split("="); 
+    if (pair[0] == params) { 
+      return pair[1]; 
+    }
+  }
+}
+</script>
+</head>
+<body data-twttr-rendered="true">
+<ul id="y_a_m_shareBar">
+  <!-- blog.yam -->
+  <li class="y_a_m_subBox y_a_m_push" title="天空部落推薦">
+    <a href="javascript:void(0)" onclick="share('homepage',getValue('share_url'));if(getValue('mymedia')=='TRUE'){parent.cm();}else{top.location.href=decodeURIComponent(getValue('recommand_url'))+'&amp;refer='+getValue('refer_url');}"><span class="innerContent">天空部落</span></a>
+  </li>
+  <!-- twitter -->
+  <li class="y_a_m_subBox y_a_m_tw" title="在推特上分享">
+    <a href="javascript:%20void(0)" onclick="share('twitter',getValue('share_url'));window.open('https://twitter.com/share?url='.concat(getValue('share_url')).concat('&amp;text='+getValue('title')),'share via twitter','alwaysRaised=yes,top=300,left=300, width=400, height=400');"><span class="innerContent">推特</span></a>
+    <script type="text/javascript" src="bookmarker4s_data/widgets.js"></script>
+  </li>
+  <!-- plurk -->
+  <li class="y_a_m_subBox y_a_m_pk" title="轉噗">
+    <a href="javascript:%20void(0)" onclick="share('plurk',getValue('share_url'));window.open('http://www.plurk.com/?qualifier=shares&amp;status=' .concat(getValue('share_url')) .concat(' ') .concat('(') .concat(getValue('title')) .concat(')'),'share via plurk','alwaysRaised=yes,top=100,left=100, width=700, height=700');"><span class="innerContent">噗浪</span></a>
+  </li>
+</ul>
+
+
+</body></html>

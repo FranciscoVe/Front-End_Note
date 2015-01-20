@@ -1,0 +1,1 @@
+document.write("<a target=\"_blank\" href=\"http://event.yam.com/2014BlogTop\">2014天空部落年度精選榜</a></br>\n\n<a target=\"_blank\" href=\"http://blog.yam.com/blogtopic/article/83708027\">贈獎|佛跳牆給你看送淨妝油</a></br>\n\n<a target=\"_blank\" href=\"http://blog.yam.com/service/article/84024342\">障礙|當日人氣異常</a></br>");

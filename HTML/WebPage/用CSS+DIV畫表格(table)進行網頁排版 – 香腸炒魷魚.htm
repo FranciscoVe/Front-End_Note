@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<!--[if IE 7 | IE 8]>
+<html class="ie" lang="zh-TW">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html itemscope="" itemtype="http://schema.org/Article" lang="zh-TW"><!--<![endif]--><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="all">
+	<meta name="author" content="香腸炒魷魚">
+	<meta name="rating" content="general">
+	<title>用CSS+DIV畫表格(table)進行網頁排版  –  香腸炒魷魚</title>
+	<link rel="author" href="https://plus.google.com/105211414132375864618/">
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.feedburner.com/s9011514">
+	<link rel="Shortcut Icon" href="http://sofree.cc/wp-content/themes/imXD7/favicon.ico">
+	<meta property="fb:admins" content="1354055161,1384325616">
+	<meta property="fb:app_id" content="112764418810512">
+		<meta itemprop="name" content="用CSS+DIV畫表格(table)進行網頁排版">
+	<meta property="og:type" content="article">
+	<meta property="og:url" content="http://sofree.cc/css-table/">
+	<meta property="og:title" content="用CSS+DIV畫表格(table)進行網頁排版  –  香腸炒魷魚">
+	<meta property="og:description" content="以往傳統網頁設計都喜歡使用table(表格)來建構網頁，這樣的建構方式對於網頁整體排版來講並沒有太大的問題，可以完美相容於各個瀏覽器。但是時代在進步，還在用table排網頁感覺就有點過時了。會這樣說並不是想引起table和div之戰，而是想要說對於網頁的維護，table表格是比較麻煩一點的，再加上程式碼不太乾淨、過多的巢狀，對於搜尋引擎來講，也比較難發現其中...">
+	<meta property="og:image" content="http://img.sofree.cc/62f39f841a78_D9AF/CSS_table_1.png">
+		<link rel="stylesheet" href="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/style.css" media="screen">
+	<script src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/a_002.htm" async=""></script><script src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/beacon.js" async=""></script><script async="" src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/cbgapi.loaded_1"></script><script async="" src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/cbgapi.loaded_0"></script><script src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/ca-pub-1091185987547968.js" type="text/javascript" async=""></script><script src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/all.js" id="facebook-jssdk"></script><script gapi_processed="true" src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/plusone.js" async="" type="text/javascript"></script><script src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/ad.js"></script><script src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/widgets.js" id="twitter-wjs"></script><script src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/linkid.js" async="" type="text/javascript"></script><script src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/analytics.js" async=""></script><script src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/jquery_002.js"></script>
+	<script src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/flaunt.js"></script>
+	<script src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/imXD6.js"></script>
+		<script>
+		var adid="1315";
+				document.write("<script src='http://ysm.hauchi.com.tw/YSMAD/YSMAD_adid_" + adid + ".js?rnd=" + Math.random() + Date.parse(new Date()) + "'></sc" + "ript>");
+		document.write('<link href="http://sofree.cc/wp-content/themes/imXD7/yahoo/cc_sofree.css" rel="stylesheet">');
+	</script><script src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/YSMAD_adid_1315.js"></script><script id="loadScript" async="" type="text/javascript" charset="utf8" src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/visitorIP.htm"></script><link href="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/cc_sofree.css" rel="stylesheet">
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-2354537-7', 'sofree.cc');
+		ga('require', 'displayfeatures');
+		ga('require', 'linkid', 'linkid.js');
+		ga('send', 'pageview');
+	</script>
+	<link rel="stylesheet" id="jetpack_css-css" href="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/jetpack.css" type="text/css" media="all">
+<script type="text/javascript" src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/jquery.js"></script>
+<script type="text/javascript" src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/jquery-migrate.js"></script>
+<link rel="canonical" href="http://sofree.cc/css-table/">
+<meta name="wumiiVerification" content="dd67a303-10e4-414e-8671-81d9f69caddc">
+<style type="text/css">img#wpstats{display:none}</style>	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://sofree.cc/wp-content/themes/imXD7/inc/js/respond.js"></script>
+	<![endif]-->
+<script src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/ADViewer_002.aspx" type="text/javascript"></script><link href="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/video-js.css" rel="stylesheet" type="text/css"><script src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/video.js" type="text/javascript"></script><script src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/jquery_003.js" type="text/javascript"></script><script src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/embed.js" async="" type="text/javascript"></script><script src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/count.js" type="text/javascript" async=""></script><script id="loadScript" async="" type="text/javascript" charset="utf8" src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/a"></script><script src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/comScore.js" type="text/javascript"></script><script src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/crtg_rta.js"></script><script src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/9975.js"></script><script src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/ADViewer.aspx"></script><script src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/related_items_v2" type="text/javascript"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f8;border:1px solid #606060;font-size:25px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3a5795;color:#fff;font-size:15px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:13px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:13px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #2f477a;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:17px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f8;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style></head>
+<body data-twttr-rendered="true">
+	<div class="top-line"></div>
+	<div id="wrap">
+		<header id="header" role="banner">
+			<h1><a href="http://sofree.cc/" title="香腸炒魷魚" id="logo">香腸炒魷魚</a></h1>
+			<div id="achang-socials">
+				<a class="fb" title="加入Facebook粉絲團" href="http://fb.com/sofreecc" target="_blank"><i class="ico-facebook"></i></a>
+				<a class="" title="加入Google+" rel="publisher" href="http://google.com/+sofreecc" target="_blank"><i class="ico-gplus"></i></a>
+				<a title="追蹤噗浪Plurk" href="http://plurk.com/s9011514" target="_blank"><i class="ico-plurk"></i></a>
+				<a title="加入twitter" href="http://twitter.com/s9011514" target="_blank"><i class="ico-twitter"></i></a>
+				<a title="關注微博" href="http://weibo.com/sofreecc" target="_blank"><i class="ico-weibo"></i></a>
+				<a title="Email訂閱文章" href="http://goo.gl/OzBML" target="_blank"><i class="ico-email"></i></a>
+				<a title="RSS訂閱最新文章" href="http://feeds.feedburner.com/s9011514" target="_blank"><i class="ico-rss"></i></a>
+			</div>
+		</header>
+		<div id="achang-menu">
+			<header><h3 class="assistive-text">Main Menu</h3></header>
+			<nav id="access" class="nav" role="navigation">
+				<ul id="menu-main-menu" class="nav-list"><li id="nav-menu-item-3056" class="nav-item main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://sofree.cc/category/taobao/" class="menu-link main-menu-link">淘寶教學</a></li>
+<li id="nav-menu-item-2952" class="nav-item main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children"><span class="nav-click"><i class="nav-arrow"></i></span><a href="http://sofree.cc/category/software/" class="menu-link main-menu-link">免費軟體</a>
+<ul class="nav-submenu menu-odd  menu-depth-1">
+	<li id="nav-menu-item-3140" class="nav-submenu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-custom menu-item-object-custom"><a href="http://url.sofree.cc/free-class" class="menu-link sub-menu-link">免費課程</a></li>
+	<li id="nav-menu-item-2971" class="nav-submenu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-taxonomy menu-item-object-post_tag"><a href="http://sofree.cc/tag/android/" class="menu-link sub-menu-link">Android</a></li>
+</ul>
+</li>
+<li id="nav-menu-item-3135" class="nav-item main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><span class="nav-click"><i class="nav-arrow"></i></span><a href="http://url.sofree.cc/free-class" class="menu-link main-menu-link">免費教學</a>
+<ul class="nav-submenu menu-odd  menu-depth-1">
+	<li id="nav-menu-item-2959" class="nav-submenu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent"><a href="http://sofree.cc/category/tips/" class="menu-link sub-menu-link">技巧應用</a></li>
+	<li id="nav-menu-item-2957" class="nav-submenu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://sofree.cc/category/google/" class="menu-link sub-menu-link">Google</a></li>
+	<li id="nav-menu-item-2956" class="nav-submenu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://sofree.cc/category/windows/" class="menu-link sub-menu-link">Windows</a></li>
+	<li id="nav-menu-item-2991" class="nav-submenu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://sofree.cc/category/make-money/" class="menu-link sub-menu-link">網路賺錢</a></li>
+</ul>
+</li>
+<li id="nav-menu-item-2954" class="nav-item main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children"><span class="nav-click"><i class="nav-arrow"></i></span><a href="http://sofree.cc/category/build-website/" class="menu-link main-menu-link">網站架設</a>
+<ul class="nav-submenu menu-odd  menu-depth-1">
+	<li id="nav-menu-item-2953" class="nav-submenu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://sofree.cc/category/wordpress/" class="menu-link sub-menu-link">WordPress</a></li>
+	<li id="nav-menu-item-2762" class="nav-submenu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" href="http://achang.tw/" class="menu-link sub-menu-link">網頁設計</a></li>
+	<li id="nav-menu-item-2968" class="nav-submenu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" href="http://achang.tw/hosting.html" class="menu-link sub-menu-link">虛擬主機</a></li>
+	<li id="nav-menu-item-2873" class="nav-submenu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sofree.cc/themes/" class="menu-link sub-menu-link">免費版型</a></li>
+	<li id="nav-menu-item-2955" class="nav-submenu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://sofree.cc/category/domain-name/" class="menu-link sub-menu-link">網域應用</a></li>
+</ul>
+</li>
+<li id="nav-menu-item-2964" class="nav-item main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children"><span class="nav-click"><i class="nav-arrow"></i></span><a href="http://sofree.cc/category/other-things/" class="menu-link main-menu-link">生活隨記</a>
+<ul class="nav-submenu menu-odd  menu-depth-1">
+	<li id="nav-menu-item-2960" class="nav-submenu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://sofree.cc/category/recommend-website/" class="menu-link sub-menu-link">好站推薦</a></li>
+	<li id="nav-menu-item-2966" class="nav-submenu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://sofree.cc/category/internet-comment/" class="menu-link sub-menu-link">網路評論</a></li>
+</ul>
+</li>
+<li id="nav-menu-item-2965" class="nav-item main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children"><span class="nav-click"><i class="nav-arrow"></i></span><a href="http://sofree.cc/category/hardware/" class="menu-link main-menu-link">產品開箱</a>
+<ul class="nav-submenu menu-odd  menu-depth-1">
+	<li id="nav-menu-item-2967" class="nav-submenu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://sofree.cc/category/sponsored/" class="menu-link sub-menu-link">評測邀約</a></li>
+</ul>
+</li>
+<li id="nav-menu-item-2731" class="nav-item main-menu-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><span class="nav-click"><i class="nav-arrow"></i></span><a href="http://sofree.cc/about/" class="menu-link main-menu-link">關於本站</a>
+<ul class="nav-submenu menu-odd  menu-depth-1">
+	<li id="nav-menu-item-2734" class="nav-submenu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sofree.cc/s9011514/" class="menu-link sub-menu-link">誰是香腸?</a></li>
+	<li id="nav-menu-item-2732" class="nav-submenu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sofree.cc/fs80067/" class="menu-link sub-menu-link">誰是魷魚絲?</a></li>
+	<li id="nav-menu-item-2729" class="nav-submenu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sofree.cc/advertise/" class="menu-link sub-menu-link">合作邀約</a></li>
+	<li id="nav-menu-item-2733" class="nav-submenu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sofree.cc/blogrolls/" class="menu-link sub-menu-link">網誌聯播</a></li>
+	<li id="nav-menu-item-2730" class="nav-submenu-item  menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-page"><a href="http://sofree.cc/contact/" class="menu-link sub-menu-link">意見反饋</a></li>
+</ul>
+</li>
+</ul>			<div class="nav-mobile"></div></nav>
+		</div>
+					<div id="video-banner" style="text-align:center; margin:0 auto; padding: 10px 0">
+				<div id="s9011514_864_9067_9733_1_script"></div>
+				<script type="text/javascript" src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/s9011514_864_9067_9733_1.js"></script>
+			</div>
+								<div id="breadcrumb">
+				<i class="ico-breadcrumb"></i>
+				
+	<ul>
+		<li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+			<a title="回首頁" href="http://sofree.cc/" itemprop="url"><span itemprop="title">首頁</span></a>
+		</li><li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://sofree.cc/category/tips/" title="觀看分類「技巧應用」的全部文章" itemprop="url"><span itemprop="title">技巧應用</span></a></li><li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://sofree.cc/category/build-website/" title="觀看分類「網站架設」的全部文章" itemprop="url"><span itemprop="title">網站架設</span></a></li><li class="last"><a class="title">用CSS+DIV畫表格(table)進行網頁排版</a></li></ul>			</div>
+						<div id="content">
+								<div id="main" role="main">
+														<div id="ysmAD1315_1"><div id="ysm_hybrid_s03" class="cont"><span class="ysmlabel">贊助網站</span><div id="ysm_listing_s03"><ul><li onclick="window.open('http://2525181.r.msn.com/?ld=b2EukE0b_gAzTpOrZTsPDTrTVUCUzKJU9CcAXy2YV62WQQHUbXIsIrBNMNYYUxnSJDmXfuS-FuiRNXKnLqUe8Zgj3AVY5SUKMAiznc26rjmxwgn6kHQa2EVSRHy-w3p75lcqwlDQ&amp;u=www.goldenday.com.tw%2fhearing.php')" style="cursor:pointer;"><div><h3>巨泉助聽器 - 線上聽覺系統檢查</h3><cite>www.goldenday.com.tw</cite><p class="descr">ReSound瑞聲達助聽器總代理，33年頂級專業驗配，免費線上聽力檢測。</p></div></li><li onclick="window.open('http://3224692.r.msn.com/?ld=b2ovtIX80lHXA7E_doBN-OPDVUCUyLNEqJ8ElMQofVuxsNsYb3dJsimDzQxR93TmVR32_OgeXsrtN9ZG0vlioZtDB1v1MqJ9k9Eb2UhG3Hyz22lsP4x3nYRbIKgIRB5BCDLNOQyA&amp;u=https%3a%2f%2fsites.google.com%2fsite%2fquanliop%2f')" style="cursor:pointer;"><div><h3>新竹市權利度量衡</h3><cite>sites.google.com/site/quanliop/</cite><p class="descr">電子秤、台秤、吊秤、地磅、天平、電腦,桶槽過磅系統、打卡鐘、點驗鈔機、點餐機</p></div></li></ul></div></div></div>
+							<article id="post-2437" role="article" class="page-single">
+			<header>
+				<h1 class="entry-title">用CSS+DIV畫表格(table)進行網頁排版</h1>
+				<p class="entry-meta">
+					發表時間： <time datetime="2012-02-26T21:15:10+00:00" data-updated="true"><span class="date">2012-02-26</span></time>
+				</p>
+			</header>
+			<div class="move_top" id="share-box">
+	<div class="sn">
+	<div fb-iframe-plugin-query="app_id=112764418810512&amp;href=http%3A%2F%2Fsofree.cc%2Fcss-table%2F&amp;layout=box_count&amp;locale=zh_TW&amp;sdk=joey&amp;send=false&amp;show_faces=false&amp;width=60" fb-xfbml-state="rendered" class="fb-like fb_iframe_widget" data-href="http://sofree.cc/css-table/" data-send="false" data-layout="box_count" data-width="60" data-show-faces="false"><span style="vertical-align: bottom; width: 41px; height: 61px;"><iframe class="" src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/like.htm" style="border: medium none; visibility: visible; width: 41px; height: 61px;" title="fb:like Facebook Social Plugin" scrolling="no" allowtransparency="true" name="f2803ca11a2dd56" frameborder="0" height="1000px" width="60px"></iframe></span></div>
+	</div>
+	<div class="sn">
+	<div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 50px; height: 60px;"><iframe title="+1" data-gapiattached="true" src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/fastbutton.htm" name="I0_1421676596490" id="I0_1421676596490" vspace="0" tabindex="0" style="position: static; top: 0px; width: 50px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 60px;" scrolling="no" marginwidth="0" marginheight="0" hspace="0" frameborder="0" width="100%"></iframe></div>
+	</div>
+	<div class="sn">
+	<iframe style="width: 60px; height: 62px;" data-twttr-rendered="true" title="Twitter Tweet Button" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-vertical" src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/tweet_button.htm" allowtransparency="true" scrolling="no" id="twitter-widget-0" frameborder="0"></iframe>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	</div>
+ </div>			<div class="fix"></div>
+			<span class="singlecode">
+									<script async="" src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/adsbygoogle.js"></script>
+					<!-- 內文上方【廣告】 (336x280) -->
+					<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-1091185987547968" data-ad-slot="6625743860"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" frameborder="0" height="280" width="336"></iframe></ins></ins></ins>
+					<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+							</span>
+			<div class="notice-box">
+				<span><a href="http://sofree.cc/taobao-buy-book/?utm_source=Sofree&amp;utm_medium=PostTop&amp;utm_content=PostLink&amp;utm_campaign=Taobaobook" target="_blank" rel="nofollow"><span style="font-weight:800">香腸出新書囉！</span></a></span>
+				<span><a href="http://sofree.cc/le-80/?utm_source=Sofree&amp;utm_medium=PostTop&amp;utm_content=PostLink&amp;utm_campaign=Sofree1229" target="_blank" rel="nofollow">原來你也可以這麼潮！</a></span>
+				<span><a href="http://sofree.cc/7-reason-nas-hdd/?utm_source=Sofree&amp;utm_medium=PostTop&amp;utm_content=PostLink&amp;utm_campaign=Sofree1113" target="_blank" rel="nofollow">買NAS指南</a></span>
+															</div>
+			<p>以往傳統網頁設計都喜歡使用table(表格)來建構網頁，這樣的建構方式對於網頁整體排版來講並沒有太大的問題，可以完美相容於各個瀏覽
+器。但是時代在進步，還在用table排網頁感覺就有點過時了。會這樣說並不是想引起table和div之戰，而是想要說對於網頁的維護，table表格
+是比較麻煩一點的，再加上程式碼不太乾淨、過多的巢狀，對於搜尋引擎來講，也比較難發現其中重要的部分。</p>
+<p>那如果用CSS+DIV進行網頁排版，就會比較好嗎？基本上是可以這樣講，但是大家又會遇到網頁校正的問題，一口氣要調整四、五種版本的瀏覽器，這
+樣很可能讓網頁設計者又跑回去用table表格排版。但其實在CSS中，已經有語法是支援表格的了，並不是對表格進行樣簡單的樣式定義，而是透過CSS的
+表格屬性，完美畫出表格，排除瀏覽器相容的問題，讓傳統的table排版的設計師，也可以快速轉換。</p>
+<p><span id="more-2437"></span><span class="singlecode">	<!-- scupio ssp ad container 300x250 -->
+	<ins id="s9011514_864_9975_1080" style="display:inline-block;width:300px;height:250px;"><iframe src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/1286.htm" class="iframe-style" scrolling="no" style="border: 0px none;" name="mainFrame" height="250" width="300"></iframe></ins>
+	<script>(function(s,c,u,p,i,o,a,d){(d=s.scupioads=s.scupioads||[]).push({
+	id:p,callback:function(){
+	  var iframe = document.createElement('iframe');
+	  iframe.name = 'mainFrame';
+	  iframe.frameborder = '0';
+	  iframe.style.border = '0';
+	  iframe.scrolling = 'no';
+	  iframe.width = '300';
+	  iframe.height = '250';
+	  iframe.className = 'iframe-style';
+	  iframe.src = 'http://drd.hauchi.com.tw/DRD/1286.htm';
+	  document.getElementById('s9011514_864_9975_1080').appendChild(iframe);
+	},cid:"9975",wid:"864,17,30",pub:"lRhVRlJvEHEX",si:"300,250,9;17,3",ssp:1});
+	i=c.createElement(u),o=c.getElementsByTagName(u)[0];setTimeout(function(){
+	for(a=0;!s.scupiosdk&&a<d.length;a++)if(d[a].id===p)d[a].callback(),d[a]=0;
+	},1e3);if(s.scupiosdk)return;i.src="//img.scupio.com/ad/js/ad.js";
+	o.parentNode.insertBefore(i,o);})(window,document,"script","s9011514_864_9975_1080")</script>
+	<!-- end ssp ad container --></span></p>
+<p>在香腸之前的imXD佈景版本中，就已經將分類文章改採清單的排版方式，目的主要是不讓搜尋引擎收錄過多的重複內容，另一方面也不希望大家找文章不好找，所以改用清單的方式。本來想說使用<strong>table</strong>來產生清單排版，免除瀏覽器校正問題，但礙於搜尋引擎對表格式的網頁不好解析其內容，所以還是使用DIV排版，並默默的校正一堆瀏覽器。</p>
+<p>但是這回<a href="http://sofree.cc/imxd5/" target="_blank">imXD5</a>因為網頁<a href="http://sofree.cc/tag/html5/" target="_blank">HTML5</a>化，
+因此所有的CSS與DIV幾乎是重構的狀態，所以在本來的分類文章清單中，樣式也順便進行重構，可是問題來了？「重構=花時間」，因為要用CSS+DIV
+模擬成table的樣式，如果一直使用float來排版，校正上其實很麻煩，當然在瀏覽器的校正上，更是頭大。後來找了一下發現有有不錯的好東西，在
+diplay的屬性上，有table相關的屬性值可以使用！</p>
+<p><a href="http://sofree.cc/css-table/" target="_blank"><img style="background-image: none; margin: 0px 0px 1px; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="用CSS+DIV畫表格(table)進行網頁排版" src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/CSS_table_1.png" alt="用CSS+DIV畫表格(table)進行網頁排版" height="381" width="600" border="0"></a></p>
+<h2>傳統的table構版的問題</h2>
+<p>一般來講，table打好語法就可以呈現效果了，而且語法很簡單，就單純的table、tr、td，這三個語法就可以畫出表格，在各個瀏覽器下也都
+可以正常的顯示。如果覺得排版不漂亮，就直接在語法內加上width、color等等的屬性值，效果很容易就達到了，可是這樣會讓程式碼雜亂。對於搜尋引
+擎來講，他們抓網站內容通常不會一次抓完，會先抓到一定的網頁大小，之後再來，如果你把樣式調整的程式碼都放進去，很快的，搜尋引擎可能光收錄你的表格樣
+式，還沒抓到重點就已經達到抓取額度了，重要的資料沒被收錄，倒是收錄了一些不重要的樣式設定。</p>
+<p><img style="background-image: none; margin: 0px 0px 1px; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="用CSS+DIV畫表格(table)進行網頁排版" src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/CSS_table_2.png" alt="用CSS+DIV畫表格(table)進行網頁排版" height="260" width="531" border="0"></p>
+<h2>使用CSS構版的優點</h2>
+<p>既然表格不推薦，那我們可以考慮改用CSS+DIV來構版。CSS+DIV構版的好處就是將網頁樣式設定和主要內容分離，透過style.css檔
+案來控制樣式，而且可以很方便的改，只要網站架構不變，可以隨你開心設計好幾個版本的樣式表，哪天心情好，換一下style.css的檔案，網頁就整個大
+不同。這也就是為什麼那一些BSP部落格(例如無名、痞客邦)，會有這麼多不同的套版，他們網頁架構都相同，就只是CSS檔案的不同，透過CSS的變換，
+可以營造出不一樣的效果。</p>
+<p><img style="background-image: none; margin: 0px 0px 1px; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="用CSS+DIV畫表格(table)進行網頁排版" src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/CSS_table_3.png" alt="用CSS+DIV畫表格(table)進行網頁排版" height="232" width="600" border="0"></p>
+<h2>開始進行CSS+DIV畫表格</h2>
+<p>為了讓大家方便在DIV和table之間的轉換，所以在CSS的命名上主要就是使用「<span style="color: #ff0000;">css_</span>」作為開頭，方便做一個對照。首先，以前面的範例table範例語法：</p>
+<pre>&lt;table&gt;
+&nbsp;&nbsp;&nbsp; &lt;tr&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;td&gt;標題&lt;/td&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;td&gt;回應&lt;/td&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;td&gt;日期&lt;/td&gt;
+&nbsp;&nbsp;&nbsp; &lt;tr&gt;
+&nbsp;&nbsp;&nbsp; &lt;tr&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;td&gt;如何停用WordPress內建搜尋功能？&lt;/td&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;td&gt;5&lt;/td&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;td&gt;2011-10-30&lt;/td&gt;
+&nbsp;&nbsp;&nbsp; &lt;tr&gt;
+&lt;/table&gt;</pre>
+<p>接著，我們將以上語法改成CSS+DIV的切板模式，如同前面所說，為了方便對照，所以CSS的定名開頭採用「<span style="color: #ff0000;">css_</span>」。</p>
+<pre>&lt;div id="css_table"&gt;
+  &nbsp;&nbsp;&nbsp; &lt;div class="css_tr"&gt;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="css_td"&gt;標題&lt;/div&gt;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="css_td"&gt;回應&lt;/div&gt;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="css_td"&gt;日期&lt;/div&gt;
+  &nbsp;&nbsp;&nbsp; &lt;/div&gt;
+  &nbsp;&nbsp;&nbsp; &lt;div class="css_tr"&gt;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="css_td"&gt;如何停用WordPress內建搜尋功能？&lt;/div&gt;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="css_td"&gt;5&lt;/div&gt;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="css_td"&gt;2011-10-30&lt;/div&gt;
+  &nbsp;&nbsp;&nbsp; &lt;/div&gt;
+&lt;/div&gt;</pre>
+<p>接下來，我們套上CSS的語法，效果就會出現了！</p>
+<pre>#css_table {
+  &nbsp;&nbsp;&nbsp; display:table;
+  }
+.css_tr {
+  &nbsp;&nbsp;&nbsp; display: table-row;
+  }
+.css_td {
+  &nbsp;&nbsp;&nbsp; display: table-cell;
+  }</pre>
+<h2>CSS語法與table比對</h2>
+<p>事實上，從上面的語法來看，要用table改成css的方式並不困難，所有的樣式定義需要全部透過CSS的id或是class全部獨立出來，其他部
+分寫起來是差不多的。上面的語法，並沒有對CSS畫出的表個做顏色、邊線、寬度作定義，可能看起來醜醜的，這部分就請大家自己摸索了。這篇文章主要是要告
+訴大家，利用CSS也是可以達到table的效果。下面列出一些display對應<a href="http://htmlhelp.com/reference/html40/tables/" rel="nofollow" target="_blank">table</a>的屬性：</p>
+<ul>
+<li>inline-table：顯示成前後沒有換行的表格</li>
+<li>table：對應&lt;table&gt;標籤，以表格方式顯示。</li>
+<li>table-row：對應&lt;tr&gt;標籤。</li>
+<li>table-row-group：對應&lt;tbody&gt;標籤。</li>
+<li>table-cell：對應&lt;td&gt;標籤。</li>
+<li>table-caption：對應&lt;caption&gt;標籤。</li>
+<li>table-column：對應&lt;col&gt;標籤</li>
+<li>table-column-group：對應&lt;colgroup&gt;標籤。</li>
+<li>table-header-group：對應&lt;theader&gt;標籤。</li>
+<li>table-footer-group：對應&lt;tfooter&gt;標籤。</li>
+</ul>
+<h2>IE7以下不相容</h2>
+<p>沒錯，這樣的CSS屬性很巧的，只有在IE8以上才有支援，如果是IE7以下的瀏覽器，必須做CSS的相容性校正了，這是小可惜的地方。但目前瀏覽
+器的使用量，IE7的比例也逐漸下降，因為大多XP使用者如果要升級瀏覽器，都會直接升級IE8。如果要校正，那就要善用幾個屬
+性：display:block、float:left，還有padding和margin進行校正了。</p>
+<div class="wumii-hook">
+    <input name="wurl" value="http://sofree.cc/css-table/" type="hidden"><br>
+    <input name="wtitle" value="用CSS+DIV畫表格(table)進行網頁排版" type="hidden"><br>
+    <input name="wpic" value="" type="hidden">
+</div>
+<p></p>										<span class="singlecode">
+					<script async="" src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/adsbygoogle.js"></script>
+					<!-- 內文下方【廣告】336x280 -->
+					<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-1091185987547968" data-ad-slot="3611921319"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;" frameborder="0" height="280" width="336"></iframe></ins></ins></ins>
+					<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+				</span>
+						<div id="wumiiDisplayDiv"><div class="wumii-related-items-div" wmode="2" style="margin: 0; border: none; padding: 0; clear: both; overflow: hidden; *zoom: 1; *position: relative;">
+    
+    
+    
+        <div class="wumii-internal" style="padding: 0; margin: 0; border: none; clear: both; display: block;">
+        <div class="wumii-widget-title" style="margin: 0; border: none; padding: 20px 0 5px; _padding-top:10px; text-indent: 0; text-align: left; font-weight: bold; ">你可能有興趣的文章：</div>
+                <div class="wumii-image-row" style="clear: both; overflow: hidden; border: none; padding: 0;margin: 0;_zoom: 1;" fromurl="http%3A%2F%2Fsofree.cc%2Fcss-table%2F"><a class="wumii-image-block" hidefocus="true" title="[F5]撰寫HTML+CSS的好工具，免重新整理直接預覽網頁！" onmouseout="this.style.backgroundColor=''" onmouseover="this.style.backgroundColor='#E3E4FA'" style="display: block; float: left; text-decoration: none; border-bottom: none; cursor: pointer; position: relative; margin: 5px 0 0 -1px; padding: 5px; text-align: left; outline: none; background-image: none; border-left: 1px solid #DDDDDD !important;" href="http://sofree.cc/f5/" redirecturl="">
+    <span class="wumii-image-clip" style="overflow: hidden; position: relative; display: block; width: 119px; height: 119px; margin: 0 0 5px; padding: 0; border: 1px solid #DDDDDD;">
+        <img src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/8foN6Pq4.png" image-url="http://static.wumii.cn/site_images/ti/8foN6Pq4.png?i=4Jjsq21N" class="wumii-image" style="position: absolute; margin: 0px; padding: 0px; border: medium none; background: none repeat scroll 0% 0% transparent; left: 2px; top: 2px; width: 115px; height: 115px; clip: rect(0px, 115px, 115px, 0px); visibility: visible;">
+    </span>
+    <div class="wumii-image-title" style="width: 121px; height: 65px; margin: 3px 0 0 0; padding: 0; text-indent: 0; text-align: left; border: none; font: 12px/15px arial; color: #333333; overflow: hidden; white-space: normal; clear: both;">[F5]撰寫HTML+CSS的好工具，免重新整理直接預覽網頁！</div>
+</a><a class="wumii-image-block" hidefocus="true" title="檢查網站是否通過CSS3驗證？" onmouseout="this.style.backgroundColor=''" onmouseover="this.style.backgroundColor='#E3E4FA'" style="display: block; float: left; text-decoration: none; border-bottom: none; cursor: pointer; position: relative; margin: 5px 0 0 -1px; padding: 5px; text-align: left; outline: none; background-image: none; border-left: 1px solid #DDDDDD !important;" href="http://sofree.cc/css3-validator/" redirecturl="">
+    <span class="wumii-image-clip" style="overflow: hidden; position: relative; display: block; width: 119px; height: 119px; margin: 0 0 5px; padding: 0; border: 1px solid #DDDDDD;">
+        <img src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/vjTL090f.png" image-url="http://static.wumii.cn/site_images/ti/vjTL090f.png?i=1b9JjrBV8" class="wumii-image" style="position: absolute; margin: 0px; padding: 0px; border: medium none; background: none repeat scroll 0% 0% transparent; left: 2px; top: 2px; width: 115px; height: 115px; clip: rect(0px, 115px, 115px, 0px); visibility: visible;">
+    </span>
+    <div class="wumii-image-title" style="width: 121px; height: 65px; margin: 3px 0 0 0; padding: 0; text-indent: 0; text-align: left; border: none; font: 12px/15px arial; color: #333333; overflow: hidden; white-space: normal; clear: both;">檢查網站是否通過CSS3驗證？</div>
+</a><a class="wumii-image-block" hidefocus="true" title="如何製作CSS多層下拉式選單？(不用Javascript)" onmouseout="this.style.backgroundColor=''" onmouseover="this.style.backgroundColor='#E3E4FA'" style="display: block; float: left; text-decoration: none; border-bottom: none; cursor: pointer; position: relative; margin: 5px 0 0 -1px; padding: 5px; text-align: left; outline: none; background-image: none; border-left: 1px solid #DDDDDD !important;" href="http://sofree.cc/pure-css-menu-maker/" redirecturl="">
+    <span class="wumii-image-clip" style="overflow: hidden; position: relative; display: block; width: 119px; height: 119px; margin: 0 0 5px; padding: 0; border: 1px solid #DDDDDD;">
+        <img src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/FM1etdDJ.png" image-url="http://static.wumii.cn/site_images/ti/FM1etdDJ.png?i=nhZg30re" class="wumii-image" style="position: absolute; margin: 0px; padding: 0px; border: medium none; background: none repeat scroll 0% 0% transparent; left: 2px; top: 2px; width: 115px; height: 115px; clip: rect(0px, 115px, 115px, 0px); visibility: visible;">
+    </span>
+    <div class="wumii-image-title" style="width: 121px; height: 65px; margin: 3px 0 0 0; padding: 0; text-indent: 0; text-align: left; border: none; font: 12px/15px arial; color: #333333; overflow: hidden; white-space: normal; clear: both;">如何製作CSS多層下拉式選單？(不用Javascript)</div>
+</a><a class="wumii-image-block" hidefocus="true" title="[教學]使用jQuery和CSS去除超連結虛線" onmouseout="this.style.backgroundColor=''" onmouseover="this.style.backgroundColor='#E3E4FA'" style="display: block; float: left; text-decoration: none; border-bottom: none; cursor: pointer; position: relative; margin: 5px 0 0 -1px; padding: 5px; text-align: left; outline: none; background-image: none; border-left: 1px solid #DDDDDD !important;" href="http://sofree.cc/jquery-css-outline/" redirecturl="">
+    <span class="wumii-image-clip" style="overflow: hidden; position: relative; display: block; width: 119px; height: 119px; margin: 0 0 5px; padding: 0; border: 1px solid #DDDDDD;">
+        <img src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/FxgQCO9k.png" image-url="http://static.wumii.cn/site_images/ti/FxgQCO9k.png?i=dTOkz77n" class="wumii-image" style="position: absolute; margin: 0px; padding: 0px; border: medium none; background: none repeat scroll 0% 0% transparent; left: 2px; top: 2px; width: 115px; height: 115px; clip: rect(0px, 115px, 115px, 0px); visibility: visible;">
+    </span>
+    <div class="wumii-image-title" style="width: 121px; height: 65px; margin: 3px 0 0 0; padding: 0; text-indent: 0; text-align: left; border: none; font: 12px/15px arial; color: #333333; overflow: hidden; white-space: normal; clear: both;">[教學]使用jQuery和CSS去除超連結虛線</div>
+</a><a class="wumii-image-block" hidefocus="true" title="[CSS]如何去除圖片超連結的藍色外框？" onmouseout="this.style.backgroundColor=''" onmouseover="this.style.backgroundColor='#E3E4FA'" style="display: block; float: left; text-decoration: none; border-bottom: none; cursor: pointer; position: relative; margin: 5px 0 0 -1px; padding: 5px; text-align: left; outline: none; background-image: none; border-left: 1px solid #DDDDDD !important;" href="http://sofree.cc/css-img-border/" redirecturl="">
+    <span class="wumii-image-clip" style="overflow: hidden; position: relative; display: block; width: 119px; height: 119px; margin: 0 0 5px; padding: 0; border: 1px solid #DDDDDD;">
+        <img src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/NInJ7t7h.png" image-url="http://static.wumii.cn/site_images/ti/NInJ7t7h.png?i=hT3cdYIg" class="wumii-image" style="position: absolute; margin: 0px; padding: 0px; border: medium none; background: none repeat scroll 0% 0% transparent; left: 2px; top: 2px; width: 115px; height: 115px; clip: rect(0px, 115px, 115px, 0px); visibility: visible;">
+    </span>
+    <div class="wumii-image-title" style="width: 121px; height: 65px; margin: 3px 0 0 0; padding: 0; text-indent: 0; text-align: left; border: none; font: 12px/15px arial; color: #333333; overflow: hidden; white-space: normal; clear: both;">[CSS]如何去除圖片超連結的藍色外框？</div>
+</a></div>
+    </div><div class="wumii-footer" style="margin: 0; border: none; padding: 5px 0; clear: both; text-align: right;">
+            <a href="http://www.wumii.com/widget/relatedItems" target="_blank" title="无觅关联推荐" style="font: 12px arial; color: rgb(187, 187, 187); border-bottom: medium none; word-wrap: normal; display: inline; cursor: pointer;">无觅关联推荐[?]</a>
+                
+        </div>
+</div></div>
+			<footer>
+				<div class="vcard">
+				<span class="photo"><img alt="" src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/899dec7985c1e9835ed4dd71b2ba384a.jpg" class="avatar avatar-80 photo" height="80" width="80"></span>
+				<span class="fn nickname">香腸</span>
+				<p>剛退伍的社會菜鳥，最近又開始擺攤，烤魷魚兼職偷賣香腸。買香腸沒送蒜頭，買蒜頭才送香腸....而且這件事只有三個人知道：香腸、蒜頭和烤盤.....你跟我都不會知道。<br><a href="https://plus.google.com/105211414132375864618/?rel=author" target="_blank" rel="author">Google+</a> | <a href="http://sofree.cc/s9011514/" target="_blank">個人介紹</a> | <a href="http://sofree.cc/author/s9011514/" target="_blank">更多文章 »</a></p></div>				<div class="category">分類: <a href="http://sofree.cc/category/tips/" rel="category tag">技巧應用</a>, <a href="http://sofree.cc/category/build-website/" rel="category tag">網站架設</a></div>
+				<div class="tags">標籤: <a href="http://sofree.cc/tag/css/" rel="tag">CSS</a>, <a href="http://sofree.cc/tag/css%e8%a1%a8%e6%a0%bc/" rel="tag">CSS表格</a>, <a href="http://sofree.cc/tag/seo/" rel="tag">SEO</a>, <a href="http://sofree.cc/tag/%e6%8a%80%e5%b7%a7/" rel="tag">技巧</a>, <a href="http://sofree.cc/tag/%e7%b6%b2%e9%a0%81%e8%a8%ad%e8%a8%88/" rel="tag">網頁設計</a></div>			</footer>
+		</article>
+	
+<div id="disqus_thread"><iframe verticalscrolling="no" horizontalscrolling="no" src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/a.htm" style="width: 100% ! important; border: medium none ! important; overflow: hidden ! important; height: 2750px ! important;" title="Disqus" tabindex="0" scrolling="no" allowtransparency="true" data-disqus-uid="2" id="dsq-2" frameborder="0" width="100%"></iframe><iframe style="width: 750px ! important; border: medium none ! important; overflow: hidden ! important; top: 0px ! important; min-width: 750px ! important; max-width: 750px ! important; position: fixed ! important; z-index: 2147483646 ! important; height: 29px ! important; min-height: 29px ! important; max-height: 29px ! important; display: none ! important;" title="Disqus" tabindex="0" scrolling="no" allowtransparency="true" data-disqus-uid="indicator-north" id="dsq-indicator-north" frameborder="0"></iframe><iframe style="width: 750px ! important; border: medium none ! important; overflow: hidden ! important; bottom: 0px ! important; min-width: 750px ! important; max-width: 750px ! important; position: fixed ! important; z-index: 2147483646 ! important; height: 29px ! important; min-height: 29px ! important; max-height: 29px ! important; display: none ! important;" title="Disqus" tabindex="0" scrolling="no" allowtransparency="true" data-disqus-uid="indicator-south" id="dsq-indicator-south" frameborder="0"></iframe></div>
+
+<script type="text/javascript">
+var disqus_url = 'http://sofree.cc/css-table/';
+var disqus_identifier = '2437 http://sofree.cc/?p=2437';
+var disqus_container_id = 'disqus_thread';
+var disqus_shortname = 'sofree';
+var disqus_title = "用CSS+DIV畫表格(table)進行網頁排版";
+var disqus_config_custom = window.disqus_config;
+var disqus_config = function () {
+    /*
+    All currently supported events:
+    onReady: fires when everything is ready,
+    onNewComment: fires when a new comment is posted,
+    onIdentify: fires when user is authenticated
+    */
+    
+    
+    this.language = '';
+        this.callbacks.onReady.push(function () {
+
+        // sync comments in the background so we don't block the page
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = '?cf_action=sync_comments&post_id=2437';
+
+        var firstScript = document.getElementsByTagName('script')[0];
+        firstScript.parentNode.insertBefore(script, firstScript);
+    });
+    
+    if (disqus_config_custom) {
+        disqus_config_custom.call(this);
+    }
+};
+
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+									</div><!-- main  -->
+								<aside id="sidebar">
+	<header><h3 class="assistive-text">Sidebar</h3></header>
+	<section class="widget ss">
+		<h4 class="ico-sausage">站內搜尋</h4>
+		<div class="search-box">
+			<form name="searchform" action="https://www.google.com/cse" method="get" target="_blank">
+				<input name="cx" value="015152957191088001903:ywicw6slygy" type="hidden">
+				<input name="ie" value="UTF-8" type="hidden">
+				<input placeholder="請輸入關鍵字..." name="q" id="q" class="Search" type="text">
+				<input name="Search_as_q" class="Submit" id="searchsubmit" value="搜尋" type="submit">
+			</form>
+			<script type="application/ld+json">
+			{
+			  "@context": "http://schema.org",
+			  "@type": "WebSite",
+			  "url": "http://sofree.cc/",
+			  "potentialAction": {
+			    "@type": "SearchAction",
+			    "target": "https://sofree.cc/?s={search_term}",
+			    "query-input": "required name=search_term"
+			  }
+			}
+			</script>
+		</div>
+	</section>
+	<section class="widget">
+		<h4 class="assistive-text">Sponsored</h4>
+		<div class="textwidget">
+		 					<div class="side-ad-g">
+				<script async="" src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/adsbygoogle.js"></script>
+				<!-- 側邊上方【連結】(180x90) -->
+				<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:180px;height:90px" data-ad-client="ca-pub-1091185987547968" data-ad-slot="1195283153"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:180px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:180px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;" frameborder="0" height="90" width="180"></iframe></ins></ins></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+			</div>
+				</div>
+	</section>
+		<section class="widget">		<h4 class="ico-sausage">最新文章</h4>		<ul>
+					<li>
+				<a href="http://sofree.cc/apc-back-ups-pro-700/">[開箱]打雷、跳電、停電都不怕！穩壓在線互動式不斷電系統 (APC BACK-UPS PRO 700)</a>
+						</li>
+					<li>
+				<a href="http://sofree.cc/taobao-buy-book/">新書《激省淘金術！淘寶買物教戰守則》最詳細的淘寶購物教學</a>
+						</li>
+					<li>
+				<a href="http://sofree.cc/benq-jm-250/">BenQ 電視上網精靈 JM-250，帶給你更方便的電視新體驗！</a>
+						</li>
+					<li>
+				<a href="http://sofree.cc/le-80/">[開箱]珍藏箱 LE-80 數位防潮箱，讓3C、營養食品保存良好，讓你防潮又很潮！</a>
+						</li>
+					<li>
+				<a href="http://sofree.cc/iq-going-ime/">[下載]真正免費！新自然輸入法 10 注音版(Windows免費、Mac試用)</a>
+						</li>
+					<li>
+				<a href="http://sofree.cc/synology-ds215j/">[開箱]Synology DS215j 最適用家庭娛樂NAS，整理照片、聽音樂、做筆記都方便！</a>
+						</li>
+					<li>
+				<a href="http://sofree.cc/wordpress-box-tip-3/">【WordPress百寶箱3】 對應主機DNS、建立資料庫與使用者帳號</a>
+						</li>
+					<li>
+				<a href="http://sofree.cc/wordpress-box-tip-2/">【WordPress百寶箱2】 申請 Godaddy 付費穩定cPanel虛擬主機</a>
+						</li>
+				</ul>
+		</section><section class="widget"><h4 class="ico-sausage">網站分類</h4>		<ul>
+	<li class="cat-item cat-item-3"><a href="http://sofree.cc/category/blog/" title="提供一些部落格相關的小玩意，點綴裝飾你的部落格，讓網站整體感覺更豐富！">Blog</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://sofree.cc/category/google/" title="提供詳細的Google服務介紹，善用網路免費服務，讓一切成本省到底，別忘了，它可是有個很強大的Gmail信箱哦！">Google</a>
+</li>
+	<li class="cat-item cat-item-754"><a href="http://sofree.cc/category/windows/" title="簡易的Windows操作應用教學、專屬於Windows、Office的一些小撇步。">Windows</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="http://sofree.cc/category/wordpress/" title="提供詳細的WordPress架設教學、外掛介紹、優化技巧分享，以圖文解說的方式，讓您可以在很短的時間內，熟悉WordPress。">WordPress</a>
+</li>
+	<li class="cat-item cat-item-355"><a href="http://sofree.cc/category/software/" title="網路上資源這麼多？免費軟體當然就到這邊找，從這你可以挖到超多免費好料，而且都是合法正版的軟體，千萬別錯過囉！">免費軟體</a>
+</li>
+	<li class="cat-item cat-item-161"><a href="http://sofree.cc/category/recommend-website/" title="推薦一些不錯的好網站，有好玩的、有趣的、實用的免費服務，讓網路生活體驗更棒！">好站推薦</a>
+</li>
+	<li class="cat-item cat-item-95"><a href="http://sofree.cc/category/funny/" title="遊戲玩到很累很無聊？別擔心，來這邊找點好玩的有趣的事情吧！">好笑好玩</a>
+</li>
+	<li class="cat-item cat-item-234"><a href="http://sofree.cc/category/tips/" title="提供站長的一些電腦使用、網站經營、網頁開發等小技巧，當然還有破除一些付費版相關產品的小撇步，別擔心，這些都是合法的小技巧哦！">技巧應用</a>
+</li>
+	<li class="cat-item cat-item-339"><a href="http://sofree.cc/category/news/" title="提供一些時事新聞話題分享，吸收最新最快的資訊。">時勢新聞</a>
+</li>
+	<li class="cat-item cat-item-3247"><a href="http://sofree.cc/category/taobao/" title="最詳細完整的淘寶購物教學、優站建立教學，淘寶實名制與開通阿里媽媽，完成紀錄，讓你一步步操作立刻上手。">淘寶教學</a>
+</li>
+	<li class="cat-item cat-item-214"><a href="http://sofree.cc/category/other-things/" title="紀錄了香腸與魷魚絲的生活雜事，吃、喝、玩、樂通通在這裡與大家分享！">生活隨記</a>
+</li>
+	<li class="cat-item cat-item-346"><a href="http://sofree.cc/category/hardware/" title="硬體應用分享、產品開箱、有箱就開，就是要讓你手滑跟著我們一起敗家！">產品開箱</a>
+</li>
+	<li class="cat-item cat-item-283"><a href="http://sofree.cc/category/domain-name/" title="網站架設不可或缺的網址都在這，找免費網址也在這，一些網址該注意的事項、如何購買，讓我們一次告訴你！">網域應用</a>
+</li>
+	<li class="cat-item cat-item-282"><a href="http://sofree.cc/category/build-website/" title="架設一個網站不用花太久的時間，滑鼠點一點，網站也可以輕鬆架設好，這邊提供了一些網站架設教學，以圖文解說的方式，讓大家知道網站架設其實真的不難喔！">網站架設</a>
+</li>
+	<li class="cat-item cat-item-327"><a href="http://sofree.cc/category/internet-comment/" title="紀錄了一些對網路、網站、服務的評論分析，歡迎大家一同來交流。">網路評論</a>
+</li>
+	<li class="cat-item cat-item-237"><a href="http://sofree.cc/category/make-money/" title="網路賺錢現在正夯，在部落格掛廣告或是上傳檔案分享，都可以輕輕鬆鬆賺外快！">網路賺錢</a>
+</li>
+	<li class="cat-item cat-item-780"><a href="http://sofree.cc/category/sponsored/" title="廠商合作、評測邀約，歡迎推薦給我們您最引以為傲的產品，讓我們為您寫文曝光，推薦給更多需要的讀者們。">評測邀約</a>
+</li>
+		</ul>
+</section><section class="widget">			<div class="textwidget"><script async="" src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/adsbygoogle.js"></script>
+<!-- 側邊欄【廣告】(300x600) -->
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-1091185987547968" data-ad-slot="6275210196"><ins id="aswift_3_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_3_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;" frameborder="0" height="600" width="300"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+		</section>	<section class="widget">
+		<h4 class="ico-sausage">友站連結</h4>
+		<div class="textwidget">
+			<ul id="links">
+			<li><a target="_blank" href="http://lanlanlu.tw/">藍藍路 黑暗部落格</a></li>
+			<li><a target="_blank" href="http://sofun.tw/">簡單生活Easylife</a></li>
+			<li><a target="_blank" href="http://scl13.com/">Sinchen部落格</a></li>
+			<li><a target="_blank" href="http://yukiblog.tw/">Yuki's Life</a></li>
+			<li><a target="_blank" href="http://funtory.tw/">Funtory 設計‧生活</a></li>
+			<li><a target="_blank" href="http://rayblog.tw/">瑞媽咪の樂活人生～Ray Family</a></li>
+			<li><a target="_blank" href="http://achang.tw/" title="阿腸網頁設計工作室">台北網頁設計</a></li>
+			<li><a target="_blank" href="http://www.azofreeware.com/">阿榮福利味</a></li>
+			</ul>
+		</div>
+	</section>
+	<section class="widget">
+		<h4 class="assistive-text">Sponsor</h4>
+		<div class="textwidget">
+						<div id="ysmAD1315_2"><div id="ysm_hybrid_s08" class="cont"><div class="rclt"></div><div class="rcrt"></div><div id="ysm_listing_s08"><ul><li><a href="http://45024768.r.msn.com/?ld=b2fFRU7QrfrIsO74HQOP8JHjVUCUy1BztKypf5Bnf0C2eAPypXe2NQQX9esGHalVq29rrG1FPRBqgG-YPHGLlQNZcwRcGE--YG_hd444T3xS21prHf5npR-OhRwZcTN9OQeb1pIw&amp;u=www.ivideo.com.tw%2factivity%2ftaiwan-wifi-tc.asp" target="_blank"><h3>台灣行動上網出租服務-無限上網</h3><div class="descr">機場取件，5天港幣42元，每日港幣8.4元</div><cite>www.ivideo.com.tw</cite></a></li><li><a href="http://0.r.msn.com/?ld=b2sxb80gjCJqp-Ib4Go_qbXjVUCUwCSp_D3m6ZnIcd3PN3eO_XX3OhGfaqy0ydPxi1b3Rnh6wplUjRPR1JmMVIRJvDvaof0sxU9yVksSJCRgk_MUkEXsuX4KzrbZHX0IG8aC15Zg&amp;u=www.natvd.com" target="_blank"><h3>Organika加拿大網路購物</h3><div class="descr">加拿大產地售價省30-50%,送達世界各地</div><cite>www.natvd.com</cite></a></li></ul><div class="ysmlabel2">贊助網站</div></div><div class="rclb"></div><div class="rcrb"></div></div></div>
+						<div class="sponsor">
+								<a title="徵信社收費" target="_blank" hreflang="zh-tw" href="https://www.tea12.com.tw/spend.html">徵信社收費</a>
+				<br>
+				<br>
+
+								<a title="Gmail企業版Google Apps" target="_blank" href="http://apps.ts-consultancy.com.tw/">Google Apps企業版-田中系統顧問</a>
+				<br>
+				<a title="網站製作與行銷服務" target="_blank" href="http://www.ts-consultancy.com.tw/">田中系統顧問-網路行銷一貫化服務</a>
+				<br>
+				<a title="京都旅遊情報網站" target="_blank" hreflang="zh-tw" href="http://kyoto.letsgojp.com/">樂吃購京都-旅遊資訊網</a>
+				<br>
+				<a title="大阪旅遊情報網站" target="_blank" hreflang="zh-tw" href="http://osaka.letsgojp.com/">樂吃購大阪-旅遊資訊網</a>
+				<br>
+				<a title="求婚與結婚基本知識" target="_blank" hreflang="zh-tw" href="http://www.iprimo.tw/propose/">I-PRIMO求婚資訊專欄</a>
+				<br>
+				<a href="http://www.box1.tw/" hreflang="zh-tw" title="超便宜瓦楞紙箱" target="_blank">日本最大紙箱網站，線上開賣</a>
+				<br>
+				<br>
+				<br>
+								<div style="side-ad-y">
+					<div id="ysmAD1315_2"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+		<section class="widget">
+			<div class="box subscribe">
+				<h4 class="ico-hot">訂閱最新文章</h4>
+				<p>免費訂閱最新文章，好文不錯過！</p>
+				<div class="Subscribers">
+					<form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=s9011514', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+					<input class="textfield" id="sub_email" placeholder="請輸入信箱..." name="email" type="email">
+					<input value="s9011514" name="uri" type="hidden">
+					<input value="sofree.cc" name="title" type="hidden">
+					<input name="loc" value="zh_TW" type="hidden">
+					<input id="click" value="訂閱" type="submit">
+					</form>
+				</div>
+			</div>
+		</section>
+	<div class="sticky">
+		<section class="widget">
+			<h4 class="ico-hot">Follow Us</h4>
+						<div class="box">
+				<div fb-iframe-plugin-query="app_id=112764418810512&amp;color_scheme=light&amp;header=false&amp;height=170&amp;href=https%3A%2F%2Fwww.facebook.com%2Fsofreecc&amp;locale=zh_TW&amp;sdk=joey&amp;show_border=true&amp;show_faces=true&amp;stream=false&amp;width=300" fb-xfbml-state="rendered" class="fb-like-box fb_iframe_widget" data-href="https://www.facebook.com/sofreecc" data-width="300" data-height="170" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="true"><span style="vertical-align: bottom; width: 300px; height: 170px;"><iframe class="" src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/like_box.htm" style="border: medium none; visibility: visible; width: 300px; height: 170px;" title="fb:like_box Facebook Social Plugin" scrolling="no" allowtransparency="true" name="f2fb14d727dc65" frameborder="0" height="170px" width="300px"></iframe></span></div>
+			</div>
+					</section>
+		<section class="widget">
+			<h4 class="ico-sausage">新書上架</h4>
+			<div class="book">
+				<a href="http://sofree.cc/taobao-buy-book/?utm_source=Sofree&amp;utm_medium=Sidebar&amp;utm_content=Postimg&amp;utm_campaign=Taobaobook" target="_blank" title="激省淘金術！淘寶買物教戰守則"><img src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/taobao_book.png" alt="激省淘金術！淘寶買物教戰守則"></a><br>
+				【<a target="_blank" href="http://sofree.cc/taobao-buy-book/?utm_source=Sofree&amp;utm_medium=Sidebar&amp;utm_content=Link&amp;utm_campaign=Taobaobook">看介紹</a>】 | 【<a target="_blank" href="http://goo.gl/qAHUrz">立刻買</a>】
+			</div>
+		</section>
+	</div>
+</aside>
+			</div><!-- content -->
+		</div><!-- Wrap -->
+		<footer id="footer" role="contentinfo">
+			<div id="footer-inner">
+				<span class="powered"><a title="網站使用WordPress架設" href="http://wordpress.org/" target="_blank">WordPress</a> 建置 </span>
+				<span class="copyright">版權所有 © 2007 - 2015 香腸炒魷魚</span>
+				<span class="theme"><a title="佈景主題由香腸炒魷魚自行開發" href="http://sofree.cc/imxd7/">imXD7</a> 版型</span>
+				<span class="hosting"><a href="http://www.yu-lan.com.tw/" title="推薦使用雲端主機" target="_blank">WordPress 主機</a></span>
+			</div>
+		</footer>
+		<script type="text/javascript">
+		 window.___gcfg = {lang: "zh-TW"};
+		 (function() {
+		var po = document.createElement("script"); po.type = "text/javascript"; po.async = true;
+		po.src = "https://apis.google.com/js/plusone.js?onload=onLoadCallback";
+		var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(po, s);
+		 })();
+		</script>
+		<div class=" fb_reset" id="fb-root"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/7r8gQb8MIqE.htm" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_http" scrolling="no" allowtransparency="true" name="fb_xdm_frame_http" frameborder="0"></iframe><iframe src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/7r8gQb8MIqE_002.htm" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_https" scrolling="no" allowtransparency="true" name="fb_xdm_frame_https" frameborder="0"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+		<script>(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1&appId=112764418810512";
+		fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		        <script type="text/javascript">
+        // <![CDATA[
+        var disqus_shortname = 'sofree';
+        (function () {
+            var nodes = document.getElementsByTagName('span');
+            for (var i = 0, url; i < nodes.length; i++) {
+                if (nodes[i].className.indexOf('dsq-postid') != -1) {
+                    nodes[i].parentNode.setAttribute('data-disqus-identifier', nodes[i].getAttribute('data-dsqidentifier'));
+                    url = nodes[i].parentNode.href.split('#', 1);
+                    if (url.length == 1) { url = url[0]; }
+                    else { url = url[1]; }
+                    nodes[i].parentNode.href = url + '#disqus_thread';
+                }
+            }
+            var s = document.createElement('script'); 
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+        // ]]>
+        </script>
+        
+<p style="margin:0;padding:0;height:1px;overflow:hidden;">
+    <script type="text/javascript"><!--
+        var wumiiSitePrefix = "http://sofree.cc";
+        var wumiiEnableCustomPos = true;
+        var wumiiParams = "&num=5&mode=3&displayInFeed=0&version=1.0.5.7&pf=WordPress4.1";
+        var wumiiCategories = ["\u6280\u5de7\u61c9\u7528","\u7db2\u7ad9\u67b6\u8a2d"];
+    //--></script><script type="text/javascript" src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/relatedItemsWidget"></script><a href="http://www.wumii.com/widget/relatedItems" style="border:0;"><img src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/pixel.png" alt="无觅相关文章插件，快速提升流量" style="border:0;padding:0;margin:0;"></a>
+</p><img src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/p.gif"><script type="text/javascript" src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/photon.js"></script>
+<script type="text/javascript" src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/devicepx-jetpack.js"></script>
+
+	<script src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/e-201504.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	st_go({v:'ext',j:'1:3.3',blog:'61409349',post:'2437',tz:'8'});
+	var load_cmc = function(){linktracker_init(61409349,2437,2);};
+	if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+	else load_cmc();
+	</script><img id="wpstats" src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/g.gif">
+<!-- Cached by DB Cache Reloaded Fix -->
+	
+
+
+
+
+
+<!-- Begin comScore Tag --><script>  var _comscore = _comscore || [];  _comscore.push({ c1: "8", c2: "11473066" ,c3: "2370896352948000015" });  (function() {    var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;    s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";    el.parentNode.insertBefore(s, el);  })();</script><noscript>  <img src="http://b.scorecardresearch.com/p?c1=8&c2=11473066&c3=%%%%&c15=&cv=2.0&cj=1" /></noscript><!-- End comScore Tag --><iframe tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;" src="%E7%94%A8CSS+DIV%E7%95%AB%E8%A1%A8%E6%A0%BC%28table%29%E9%80%B2%E8%A1%8C%E7%B6%B2%E9%A0%81%E6%8E%92%E7%89%88%20%E2%80%93%20%E9%A6%99%E8%85%B8%E7%82%92%E9%AD%B7%E9%AD%9A_files/postmessageRelay.htm" id="oauth2relay235910136" name="oauth2relay235910136"></iframe></body></html>
+<!-- Dynamic page generated in 0.655 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2015-01-19 17:52:56 -->
+<!-- super cache -->
